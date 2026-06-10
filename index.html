@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paltenghi Claudio Fotografie — Portrait · Business · Fashion | Redesign-Skizze</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Archivo+Expanded:wght@800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e0e0e;
+    --muted:#6f6f6f;
+    --faint:#a3a3a3;
+    --line:#ececec;
+    --bg:#ffffff;
+    --bg-soft:#f7f6f4;
+    --accent:#0e0e0e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Archivo',-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+
+  /* type */
+  .display{font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:900;letter-spacing:-.03em;line-height:.95;text-transform:uppercase}
+  .eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:14px}
+  .eyebrow::before{content:'';width:42px;height:1.5px;background:var(--ink)}
+  h2.display{font-size:clamp(40px,6vw,84px);margin:22px 0 0}
+  .lead{font-size:clamp(17px,1.4vw,20px);color:var(--muted);max-width:560px;font-weight:400}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:12px;border:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:20px 40px;transition:.25s;text-decoration:none;border-radius:0}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark:hover{background:#333;gap:18px}
+  .btn-light{background:#fff;color:var(--ink)}
+  .btn-light:hover{gap:18px}
+  .btn-line{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+  .btn-line:hover{border-color:#fff;gap:18px}
+  .btn-line-dark{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+  .btn-line-dark:hover{background:var(--ink);color:#fff;gap:18px}
+  .arrow{font-size:16px;transition:inherit}
+
+  section{padding:clamp(90px,10vw,150px) 0}
+
+  /* ===== header ===== */
+  header{position:fixed;top:0;left:0;right:0;z-index:200;transition:.3s;padding:0}
+  header .bar{display:flex;align-items:center;justify-content:space-between;height:88px;transition:.3s}
+  header.solid{background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  header.solid .bar{height:72px}
+  .logo{font-family:'Archivo Expanded',sans-serif;font-weight:900;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:#fff;text-decoration:none;transition:.3s;line-height:1.2}
+  .logo small{display:block;font-family:'Archivo';font-weight:500;font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.7);transition:.3s}
+  header.solid .logo{color:var(--ink)}
+  header.solid .logo small{color:var(--muted)}
+  .nav-links{display:flex;gap:36px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+  .nav-links a{text-decoration:none;color:rgba(255,255,255,.85);transition:.3s}
+  .nav-links a:hover{color:#fff}
+  header.solid .nav-links a{color:var(--muted)}
+  header.solid .nav-links a:hover{color:var(--ink)}
+  .nav-book{padding:14px 28px;font-size:12px}
+  header .btn-light{background:#fff;color:var(--ink)}
+  header.solid .btn-light{background:var(--ink);color:#fff}
+
+  /* ===== hero ===== */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:0 0 clamp(26px,4vh,52px);background:#111}
+  .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=2400&q=80') center 30%/cover no-repeat}
+  .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,5,.82) 0%,rgba(5,5,5,.35) 45%,rgba(5,5,5,.25) 100%)}
+  .hero .wrap{position:relative;z-index:2;width:100%}
+  .hero-tag{color:rgba(255,255,255,.85);font-size:12px;letter-spacing:.34em;text-transform:uppercase;font-weight:600;margin-bottom:26px;display:flex;align-items:center;gap:14px}
+  .hero-tag::before{content:'';width:42px;height:1.5px;background:#fff}
+  .hero h1{font-family:'Archivo Expanded',sans-serif;font-weight:900;color:#fff;font-size:clamp(46px,8.4vw,124px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase;max-width:14ch}
+  .hero h1 .ol{-webkit-text-stroke:1.5px #fff;color:transparent}
+  .hero-sub{color:rgba(255,255,255,.8);font-size:clamp(16px,1.5vw,19px);max-width:520px;margin:24px 0 32px}
+  .hero-ctas{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:34px}
+  .hero-proof{display:flex;gap:clamp(20px,3.5vw,48px);flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.25);padding-top:18px}
+  .proof{color:#fff}
+  .proof b{font-family:'Archivo Expanded';font-size:clamp(13px,1.3vw,17px);font-weight:900;display:block;line-height:1.2}
+  .proof span{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+  .scroll-hint{position:absolute;right:clamp(20px,4vw,56px);bottom:46px;z-index:3;color:rgba(255,255,255,.7);font-size:11px;letter-spacing:.3em;text-transform:uppercase;writing-mode:vertical-rl;display:flex;align-items:center;gap:10px}
+  .scroll-hint::after{content:'';width:1px;height:54px;background:linear-gradient(rgba(255,255,255,.8),transparent);animation:drip 2s infinite}
+  @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* ===== marquee ===== */
+  .marquee{border-bottom:1px solid var(--line);overflow:hidden;padding:26px 0;background:#fff}
+  .marquee-track{display:flex;gap:64px;white-space:nowrap;animation:scroll 28s linear infinite;width:max-content}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .marquee span{font-size:13px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:64px}
+  .marquee span::after{content:'✦';color:var(--ink)}
+
+  /* ===== about ===== */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);align-items:center}
+  .about-img{position:relative}
+  .about-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .about-img figcaption{margin-top:14px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+  .about-copy p{color:var(--muted);margin:28px 0}
+  .about-stats{display:flex;gap:clamp(28px,4vw,60px);margin-top:38px;border-top:1px solid var(--line);padding-top:30px}
+  .about-stats b{font-family:'Archivo Expanded';font-size:26px;font-weight:900;display:block}
+  .about-stats span{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+  /* ===== services ===== */
+  .services{background:var(--bg-soft)}
+  .services-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,70px)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+  .svc{position:relative;overflow:hidden;cursor:pointer;text-decoration:none}
+  .svc img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .6s ease;filter:saturate(.9)}
+  .svc:hover img{transform:scale(1.045)}
+  .svc-label{position:absolute;left:0;right:0;bottom:0;padding:26px 24px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff}
+  .svc-label h3{font-family:'Archivo Expanded';font-size:clamp(17px,1.6vw,22px);font-weight:900;text-transform:uppercase;letter-spacing:-.01em}
+  .svc-label p{font-size:13px;color:rgba(255,255,255,.78);margin-top:2px}
+  .svc-label .go{position:absolute;right:22px;bottom:26px;font-size:20px;transition:.25s}
+  .svc:hover .go{transform:translateX(6px)}
+  .svc.wide{grid-column:span 1}
+
+  /* ===== pricing ===== */
+  .pricing-head{margin-bottom:clamp(40px,5vw,64px)}
+  .ptabs{display:flex;gap:0;margin:46px 0 0;border-bottom:1px solid var(--line)}
+  .ptab{background:none;border:none;font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:18px 34px 16px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:.2s}
+  .ptab.active{color:var(--ink);border-color:var(--ink)}
+  .plist{margin-top:8px}
+  .prow{display:grid;grid-template-columns:1.6fr 1fr auto auto;gap:24px;align-items:center;padding:34px 8px;border-bottom:1px solid var(--line);transition:.2s}
+  .prow:hover{background:var(--bg-soft)}
+  .prow h3{font-family:'Archivo Expanded';font-size:clamp(18px,1.8vw,24px);font-weight:900;text-transform:uppercase;letter-spacing:-.01em}
+  .prow .pdesc{font-size:14.5px;color:var(--muted)}
+  .prow .pprice{font-family:'Archivo Expanded';font-weight:900;font-size:clamp(17px,1.6vw,22px);white-space:nowrap;text-align:right}
+  .prow .pprice small{display:block;font-family:'Archivo';font-weight:500;font-size:11px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase}
+  .ph-price{color:#b08900;font-size:14px!important;font-family:'Archivo'!important;font-weight:600!important}
+  .prow .btn{padding:15px 28px;font-size:12px}
+  .ptag{display:inline-block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;background:var(--ink);color:#fff;padding:4px 10px;margin-left:12px;vertical-align:middle}
+  .paddon{margin-top:36px;font-size:14.5px;color:var(--muted)}
+  .paddon b{color:var(--ink)}
+
+  /* ===== process ===== */
+  .process{background:var(--ink);color:#fff}
+  .process .eyebrow{color:rgba(255,255,255,.6)}
+  .process .eyebrow::before{background:#fff}
+  .process h2{color:#fff}
+  .proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(30px,4vw,60px);margin-top:clamp(50px,6vw,80px)}
+  .proc{border-top:1px solid rgba(255,255,255,.25);padding-top:28px}
+  .proc .num{font-family:'Archivo Expanded';font-size:clamp(40px,4vw,60px);font-weight:900;-webkit-text-stroke:1.2px rgba(255,255,255,.85);color:transparent;line-height:1;display:block;margin-bottom:18px}
+  .proc h3{font-family:'Archivo Expanded';font-size:19px;font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .proc p{font-size:15px;color:rgba(255,255,255,.66)}
+
+  /* ===== gallery ===== */
+  .gal-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,64px)}
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(140px,22vw,300px);gap:clamp(12px,1.5vw,22px)}
+  .gal figure{overflow:hidden;position:relative}
+  .gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .gal figure:hover img{transform:scale(1.05)}
+  .g-tall{grid-row:span 2}
+  .g-wide{grid-column:span 2}
+
+  /* ===== reviews ===== */
+  .reviews{background:var(--bg-soft)}
+  .rev-top{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:clamp(44px,5vw,70px)}
+  .rev-score{text-align:right}
+  .rev-score .stars{color:var(--ink);font-size:22px;letter-spacing:6px}
+  .rev-score b{font-family:'Archivo Expanded';font-size:clamp(26px,3vw,40px);font-weight:900;display:block;text-transform:uppercase;line-height:1.1}
+  .rev-score span{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,30px)}
+  .rev{background:#fff;padding:38px 34px;position:relative}
+  .rev .q{font-family:'Archivo Expanded';font-size:50px;font-weight:900;line-height:1;color:var(--line);position:absolute;top:24px;right:28px}
+  .rev .stars{letter-spacing:3px;font-size:14px;margin-bottom:16px;display:block}
+  .rev p{font-size:15px;color:var(--muted);font-style:italic}
+  .rev .who{margin-top:20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+  .rev-note{margin-top:22px;font-size:12.5px;color:#b08900}
+
+  /* ===== cta ===== */
+  .cta{position:relative;color:#fff;text-align:center;padding:clamp(120px,15vw,200px) 0}
+  .cta-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1471341971476-ae15ff79dd83?auto=format&fit=crop&w=2400&q=80') center/cover fixed}
+  .cta-bg::after{content:'';position:absolute;inset:0;background:rgba(8,8,8,.72)}
+  .cta .wrap{position:relative;z-index:2}
+  .cta h2{font-family:'Archivo Expanded';font-weight:900;font-size:clamp(38px,6.5vw,92px);text-transform:uppercase;letter-spacing:-.03em;line-height:.95;margin-bottom:30px}
+  .cta p{color:rgba(255,255,255,.75);max-width:480px;margin:0 auto 44px}
+
+  /* ===== footer ===== */
+  footer{background:#0a0a0a;color:#9c9c9c;padding:clamp(70px,8vw,110px) 0 40px;font-size:15px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:clamp(30px,4vw,60px);margin-bottom:70px}
+  .foot-logo{font-family:'Archivo Expanded';font-weight:900;font-size:20px;text-transform:uppercase;color:#fff;line-height:1.2;margin-bottom:18px}
+  footer h4{color:#fff;font-size:12px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:20px}
+  footer a{text-decoration:none;display:block;padding:5px 0;transition:.2s}
+  footer a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid #222;padding-top:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#666}
+
+  /* ===== booking modal ===== */
+  .modal-overlay{position:fixed;inset:0;background:rgba(8,8,8,.7);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:1000;padding:18px}
+  .modal-overlay.open{display:flex}
+  .modal{background:#fff;max-width:720px;width:100%;max-height:92vh;overflow-y:auto;padding:clamp(30px,4vw,52px);position:relative;animation:pop .3s ease}
+  @keyframes pop{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
+  .modal-close{position:absolute;top:18px;right:18px;width:42px;height:42px;border:1px solid var(--line);background:#fff;font-size:16px;cursor:pointer;transition:.2s}
+  .modal-close:hover{background:var(--ink);color:#fff}
+  .m-eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:10px}
+  .modal h3{font-family:'Archivo Expanded';font-size:clamp(24px,3vw,34px);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1;margin-bottom:26px}
+  .progress{display:flex;gap:6px;margin-bottom:34px}
+  .progress div{height:3px;flex:1;background:var(--line);transition:.3s}
+  .progress div.done{background:var(--ink)}
+  .pick-list{display:grid;gap:10px}
+  .pick{border:1px solid var(--line);padding:20px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;transition:.15s;background:#fff;text-align:left;font-family:inherit;font-size:15px}
+  .pick:hover{border-color:var(--ink)}
+  .pick.sel{border-color:var(--ink);background:var(--bg-soft);box-shadow:inset 3px 0 0 var(--ink)}
+  .pick b{display:block;font-weight:800;text-transform:uppercase;font-size:14px;letter-spacing:.04em}
+  .pick small{color:var(--muted);font-size:13px}
+  .pick .p-price{font-family:'Archivo Expanded';font-weight:900;white-space:nowrap;font-size:15px}
+  .cal-head{font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:14px;margin-bottom:14px}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:24px}
+  .cal-grid .dow{font-size:11px;color:var(--faint);text-align:center;font-weight:700;letter-spacing:.1em;padding:4px 0}
+  .day{aspect-ratio:1;border:1px solid var(--line);background:#fff;font-size:14px;font-family:inherit;font-weight:600;cursor:pointer;transition:.12s}
+  .day:hover:not(:disabled){border-color:var(--ink)}
+  .day.sel{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .day:disabled{opacity:.25;cursor:default}
+  .slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .slot{padding:13px 6px;border:1px solid var(--line);background:#fff;font-size:13.5px;font-weight:600;font-family:inherit;cursor:pointer;transition:.12s}
+  .slot:hover:not(:disabled){border-color:var(--ink)}
+  .slot.sel{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-grid .full{grid-column:1/-1}
+  .field label{display:block;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:7px;color:var(--muted)}
+  .field input,.field textarea{width:100%;padding:15px 16px;border:1px solid var(--line);font-size:15px;font-family:inherit;border-radius:0}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--ink)}
+  .summary-box{background:var(--bg-soft);padding:22px 24px;font-size:14.5px;margin:0 0 26px;border-left:3px solid var(--ink)}
+  .summary-box div{display:flex;justify-content:space-between;gap:14px;padding:4px 0}
+  .summary-box span:first-child{color:var(--muted)}
+  .summary-box b{text-align:right}
+  .modal-actions{display:flex;justify-content:space-between;gap:12px;margin-top:30px}
+  .modal-actions .btn{padding:17px 32px;font-size:12.5px}
+  .micro-trust{font-size:12.5px;color:var(--muted);margin-top:16px;text-align:center}
+  .confirm-icon{width:80px;height:80px;border:2px solid var(--ink);border-radius:50%;font-size:32px;display:flex;align-items:center;justify-content:center;margin:6px auto 24px}
+  .center{text-align:center}
+
+  @media(max-width:980px){
+    .nav-links{display:none}
+    .about-grid{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .proc-grid,.rev-grid{grid-template-columns:1fr}
+    .gal{grid-template-columns:repeat(2,1fr)}
+    .prow{grid-template-columns:1fr auto;row-gap:8px}
+    .prow .pdesc{grid-column:1/-1}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .cta-bg{background-attachment:scroll}
+  }
+  @media(max-width:600px){
+    .svc-grid{grid-template-columns:1fr}
+    .form-grid{grid-template-columns:1fr}
+    .slots{grid-template-columns:repeat(3,1fr)}
+    .hero-ctas .btn{width:100%;justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="hd">
+  <div class="wrap bar">
+    <a class="logo" href="#">Paltenghi Claudio<small>Fotografie · Wil SG</small></a>
+    <nav class="nav-links">
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#preise">Preise</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#stimmen">Stimmen</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <button class="btn btn-light nav-book" onclick="openBooking()">Termin buchen</button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-tag">Fotostudio · Portrait · Business · Fashion</div>
+    <h1>Menschen.<br>Emotionen.<br><span class="ol">Authentische</span> Momente.</h1>
+    <p class="hero-sub">Professionelle Fotografie in Wil SG — von Bewerbungsfoto bis Business-Kampagne. Ihr Wunschtermin, direkt online gebucht.</p>
+    <div class="hero-ctas">
+      <button class="btn btn-light" onclick="openBooking()">Termin buchen <span class="arrow">→</span></button>
+      <a class="btn btn-line" href="#leistungen">Leistungen entdecken</a>
+    </div>
+    <div class="hero-proof">
+      <div class="proof"><b>★ Ausgezeichnet</b><span>88 Bewertungen</span></div>
+      <div class="proof"><b>12 Std.</b><span>Bilder geliefert</span></div>
+      <div class="proof"><b>100%</b><span>Zufriedenheitsgarantie</span></div>
+      <div class="proof"><b>ab CHF 95</b><span>Faire Preise</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Portrait</span><span>Business</span><span>Bewerbungsfotos</span><span>Fashion</span><span>Familie</span><span>Babybauch</span><span>Reportage</span><span>Festival</span><span>Iris Augenkunst</span><span>ID &amp; Pass</span>
+    <span>Portrait</span><span>Business</span><span>Bewerbungsfotos</span><span>Fashion</span><span>Familie</span><span>Babybauch</span><span>Reportage</span><span>Festival</span><span>Iris Augenkunst</span><span>ID &amp; Pass</span>
+  </div>
+</div>
+
+<!-- ===== LEISTUNGEN ===== -->
+<section class="services" id="leistungen">
+  <div class="wrap">
+    <div class="services-head">
+      <div>
+        <div class="eyebrow">Leistungen</div>
+        <h2 class="display">Was wir<br>fotografieren</h2>
+      </div>
+      <button class="btn btn-line-dark" onclick="openBooking()">Termin buchen <span class="arrow">→</span></button>
+    </div>
+    <div class="svc-grid">
+      <a class="svc" onclick="openBooking('Portrait Premium')">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1000&q=80" alt="Portrait">
+        <div class="svc-label"><h3>Portrait</h3><p>Basic · Premium · Deluxe — Charakterstudien voller Leben</p><span class="go">→</span></div>
+      </a>
+      <a class="svc" onclick="openBooking('Bewerbungsfotos')">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=80" alt="Bewerbungsfotos">
+        <div class="svc-label"><h3>Bewerbungsfotos</h3><p>Professionell, sympathisch, authentisch — ab CHF 95</p><span class="go">→</span></div>
+      </a>
+      <a class="svc" onclick="openBooking('Business Paket 10 Personen')">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80" alt="Business">
+        <div class="svc-label"><h3>Business</h3><p>Team- &amp; Mitarbeiterfotos für KMU — Pakete 5/10/20 Personen</p><span class="go">→</span></div>
+      </a>
+      <a class="svc" onclick="openBooking()">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1000&q=80" alt="Fashion">
+        <div class="svc-label"><h3>Fashion &amp; Beauty</h3><p>Editorial-Shootings mit Make-up &amp; Styling im Haus</p><span class="go">→</span></div>
+      </a>
+      <a class="svc" onclick="openBooking('Kinder-Fotoshooting')">
+        <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?auto=format&fit=crop&w=1000&q=80" alt="Familie">
+        <div class="svc-label"><h3>Familie &amp; Kinder</h3><p>Familienfotos, Kinder-Shootings, Babybauch</p><span class="go">→</span></div>
+      </a>
+      <a class="svc" onclick="openBooking()">
+        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80" alt="Reportage">
+        <div class="svc-label"><h3>Reportage &amp; Events</h3><p>Festival-Fotografie, Events, ID- &amp; Passbilder</p><span class="go">→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IRIS AUGENKUNST ===== -->
+<section id="augenkunst" style="background:#0e0e0e;color:#fff">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <div class="eyebrow" style="color:rgba(255,255,255,.6)">Spezialität · Augenkunst</div>
+      <h2 class="display" style="color:#fff">Iris-<br>Fotografie</h2>
+      <p style="color:rgba(255,255,255,.7);margin:28px 0">Die Schönheit Ihrer Iris in beeindruckendem Detail — als persönliches Kunstwerk. Vom professionellen Fotoshooting bis zum hochauflösenden Druck auf Plexiglas.</p>
+      <p style="color:rgba(255,255,255,.7);margin:28px 0">Die Session dauert 15–20 Minuten, das hochauflösende Bild zum Download ist inklusive. Auf Wunsch auch als exklusive Iris-Fotografie an Ihrem Event. Verfügbar in Wil oder in der Filiale in Zuzwil SG.</p>
+      <button class="btn btn-light" onclick="openBooking('Iris-Fotografie (Augenkunst)')">Iris-Session buchen <span class="arrow">→</span></button>
+    </div>
+    <figure class="about-img">
+      <img src="https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?auto=format&fit=crop&w=1200&q=80" alt="Iris-Fotografie Nahaufnahme Auge">
+      <figcaption style="color:rgba(255,255,255,.45)">Platzhalter — Original-Augenkunstwerk einsetzen</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== ÜBER MICH ===== -->
+<section id="ueber-mich">
+  <div class="wrap about-grid">
+    <figure class="about-img">
+      <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=1200&q=80" alt="Claudio Paltenghi im Studio">
+      <figcaption>Platzhalter — Portrait von Claudio Paltenghi (Original einsetzen)</figcaption>
+    </figure>
+    <div class="about-copy">
+      <div class="eyebrow">Über mich</div>
+      <h2 class="display">Claudio<br>Paltenghi</h2>
+      <p>Fotograf mit Leidenschaft für Menschen, Emotionen und authentische Momente — vom Neugeborenen bis zum Business-Profi, von Einzelportraits bis zu ganzen Teams und Familien.</p>
+      <p>Mit einem Auge für Licht, Details und Komposition entstehen Fotos, die Natürlichkeit und Professionalität verbinden. Jedes Shooting wird individuell geplant, um Ihre Persönlichkeit oder Ihr Markenbild perfekt in Szene zu setzen.</p>
+      <p>Mein Spektrum reicht von Businessfotografie, Bewerbungsfotos, Fashion- und Portrait-Shootings bis zu Familienfotos, Babybauch-Shootings und Reportagen — dazu die Spezialisierung auf Iris-Fotografie im Atelier in Zuzwil.</p>
+      <div class="about-stats">
+        <div><b>88+</b><span>Bewertungen</span></div>
+        <div><b>12h</b><span>Lieferung</span></div>
+        <div><b>Wil SG</b><span>Studio · Atelier Zuzwil</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PREISE ===== -->
+<section id="preise">
+  <div class="wrap">
+    <div class="pricing-head">
+      <div class="eyebrow">Angebote &amp; Preise</div>
+      <h2 class="display">Transparent.<br>Direkt buchbar.</h2>
+      <div class="ptabs">
+        <button class="ptab active" onclick="switchTab('portrait',this)">Portrait</button>
+        <button class="ptab" onclick="switchTab('business',this)">Business &amp; Bewerbung</button>
+      </div>
+    </div>
+
+    <div class="plist" id="tab-portrait">
+      <div class="prow">
+        <div><h3>Portrait Basic</h3></div>
+        <div class="pdesc">Fotoshooting im Studio — zeitlose Charakterstudien, Bilder innert 12 Stunden.</div>
+        <div class="pprice"><span class="ph-price">CHF [Preis Original]</span></div>
+        <button class="btn btn-line-dark" onclick="openBooking('Portrait Basic')">Buchen</button>
+      </div>
+      <div class="prow">
+        <div><h3>Portrait Premium<span class="ptag">Beliebt</span></h3></div>
+        <div class="pdesc">Ausführliches Fotoshooting von zwei bis vier Stunden — individuelle Bilder voller Leben.</div>
+        <div class="pprice"><span class="ph-price">CHF [Preis Original]</span></div>
+        <button class="btn btn-dark" onclick="openBooking('Portrait Premium')">Buchen</button>
+      </div>
+      <div class="prow">
+        <div><h3>Portrait Deluxe</h3></div>
+        <div class="pdesc">Mit Stylistin: professionelle Typberatung, Styling mit Kleidung, Shooting 2–4 Stunden.</div>
+        <div class="pprice"><span class="ph-price">CHF [Preis Original]</span></div>
+        <button class="btn btn-line-dark" onclick="openBooking('Portrait Deluxe')">Buchen</button>
+      </div>
+    </div>
+
+    <div class="plist" id="tab-business" style="display:none">
+      <div class="prow">
+        <div><h3>Bewerbungsfotos</h3></div>
+        <div class="pdesc">Im Studio, heller oder dunkler Hintergrund — mit Beratung zu Kleidung &amp; Wirkung.</div>
+        <div class="pprice">ab CHF 95<small>pro Shooting</small></div>
+        <button class="btn btn-dark" onclick="openBooking('Bewerbungsfotos')">Buchen</button>
+      </div>
+      <div class="prow">
+        <div><h3>Business 5 Personen</h3></div>
+        <div class="pdesc">Professionelle Mitarbeiterfotos für kleine Teams &amp; Praxen.</div>
+        <div class="pprice">CHF 400<small>pauschal</small></div>
+        <button class="btn btn-line-dark" onclick="openBooking('Business Paket 5 Personen')">Buchen</button>
+      </div>
+      <div class="prow">
+        <div><h3>Business 10 Personen<span class="ptag">Für KMU</span></h3></div>
+        <div class="pdesc">Einheitliche Team- &amp; Mitarbeiterfotos — stärkt Marke und Aussenwirkung.</div>
+        <div class="pprice">CHF 600<small>pauschal</small></div>
+        <button class="btn btn-dark" onclick="openBooking('Business Paket 10 Personen')">Buchen</button>
+      </div>
+      <div class="prow">
+        <div><h3>Business 20 Personen</h3></div>
+        <div class="pdesc">Professionelle Businessfotografie für grosse Teams und Unternehmen.</div>
+        <div class="pprice">CHF 1000<small>pauschal</small></div>
+        <button class="btn btn-line-dark" onclick="openBooking('Business Paket 20 Personen')">Buchen</button>
+      </div>
+    </div>
+
+    <p class="paddon"><b>＋ Zusatzoption:</b> Professionelle Make-up-Artistin / Hairstylistin für CHF 120 zubuchbar. — Weitere Angebote: Kinder-Fotoshooting (CHF 200) · Familienfotos · Babybauch · Fashion · Reportagen · Festival-Fotografie · ID- &amp; Passbilder · Bildbearbeitungs-Service</p>
+  </div>
+</section>
+
+<!-- ===== ABLAUF ===== -->
+<section class="process">
+  <div class="wrap">
+    <div class="eyebrow">Der Ablauf</div>
+    <h2 class="display">In drei Schritten<br>zu Ihren Bildern</h2>
+    <div class="proc-grid">
+      <div class="proc">
+        <span class="num">01</span>
+        <h3>Online buchen</h3>
+        <p>Angebot wählen, Wunschtermin sichern — in unter einer Minute. Ohne Anruf, ohne Wartezeit.</p>
+      </div>
+      <div class="proc">
+        <span class="num">02</span>
+        <h3>Shooting im Studio</h3>
+        <p>Entspanntes Shooting in Wil SG — mit Beratung zu Kleidung und Wirkung, auf Wunsch mit Make-up &amp; Styling.</p>
+      </div>
+      <div class="proc">
+        <span class="num">03</span>
+        <h3>Bilder innert 12 Std.</h3>
+        <p>Professionell bearbeitete Bilder innert 12 Stunden — mit 100% Zufriedenheitsgarantie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIE ===== -->
+<section id="galerie">
+  <div class="wrap">
+    <div class="gal-head">
+      <div>
+        <div class="eyebrow">Galerie</div>
+        <h2 class="display">Ausgewählte<br>Arbeiten</h2>
+      </div>
+      <p class="lead" style="max-width:380px">Platzhalter-Bilder — hier kommen die Originalaufnahmen aus der bestehenden Galerie.</p>
+    </div>
+    <div class="gal">
+      <figure class="g-tall"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Portrait Frau"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80" alt="Portrait Mann"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=80" alt="Beauty"></figure>
+      <figure class="g-tall"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80" alt="Black and White"></figure>
+      <figure class="g-wide"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=80" alt="Business Team"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=80" alt="Headshot"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=80" alt="Fashion"></figure>
+      <figure class="g-wide"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1400&q=80" alt="Familie"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" alt="Portrait"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STIMMEN ===== -->
+<section class="reviews" id="stimmen">
+  <div class="wrap">
+    <div class="rev-top">
+      <div>
+        <div class="eyebrow">Kundenstimmen</div>
+        <h2 class="display">Das sagen<br>unsere Kunden</h2>
+      </div>
+      <div class="rev-score">
+        <span class="stars">★★★★★</span>
+        <b>Ausgezeichnet</b>
+        <span>basierend auf 88 Bewertungen</span>
+      </div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev">
+        <span class="q">”</span><span class="stars">★★★★★</span>
+        <p>[ Platzhalter — Original-Kundenbewertung 1 wörtlich von der bestehenden Seite / Google übernehmen ]</p>
+        <div class="who">— Name, Ort</div>
+      </div>
+      <div class="rev">
+        <span class="q">”</span><span class="stars">★★★★★</span>
+        <p>[ Platzhalter — Original-Kundenbewertung 2 ]</p>
+        <div class="who">— Name, Ort</div>
+      </div>
+      <div class="rev">
+        <span class="q">”</span><span class="stars">★★★★★</span>
+        <p>[ Platzhalter — Original-Kundenbewertung 3 ]</p>
+        <div class="who">— Name, Ort</div>
+      </div>
+    </div>
+    <p class="rev-note">Hinweis Umsetzung: echtes Bewertungs-Widget (AUSGEZEICHNET/Google) einbinden — keine erfundenen Zitate verwenden.</p>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <div class="cta-bg"></div>
+  <div class="wrap">
+    <h2>Bereit für<br>Ihr Shooting?</h2>
+    <p>Sichern Sie sich jetzt Ihren Wunschtermin — online, in unter einer Minute.</p>
+    <button class="btn btn-light" onclick="openBooking()">Jetzt Termin buchen <span class="arrow">→</span></button>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="kontakt">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Paltenghi<br>Claudio</div>
+        <p>Fotostudio für Portrait, Business &amp; Fashion.<br>Gallusstrasse 14 · 9500 Wil SG<br>Atelier für Iris-Fotografie: Zuzwil SG</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <a href="tel:+41798284154">+41 79 828 41 54</a>
+        <a href="mailto:info@paltenghiclaudio.com">info@paltenghiclaudio.com</a>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <a href="#leistungen">Portrait</a>
+        <a href="#leistungen">Business</a>
+        <a href="#leistungen">Bewerbungsfotos</a>
+        <a href="#leistungen">Fashion &amp; Familie</a>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <a href="#galerie">Galerie</a>
+        <a href="#stimmen">Bewertungen</a>
+        <a href="#preise">Preise</a>
+        <a href="#" onclick="openBooking();return false">Termin buchen</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Paltenghi Claudio Fotografie</span>
+      <span>Redesign-Skizze · Entwurf — Bilder: Platzhalter (Unsplash)</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== BOOKING MODAL ===== -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeBooking()">✕</button>
+    <div class="progress"><div id="p1" class="done"></div><div id="p2"></div><div id="p3"></div></div>
+
+    <div id="step1">
+      <div class="m-eyebrow">Schritt 1 / 3</div>
+      <h3>Angebot wählen</h3>
+      <div class="pick-list" id="offerList"></div>
+      <div class="modal-actions">
+        <span></span>
+        <button class="btn btn-dark" id="next1" disabled onclick="goStep(2)">Weiter →</button>
+      </div>
+    </div>
+
+    <div id="step2" style="display:none">
+      <div class="m-eyebrow">Schritt 2 / 3</div>
+      <h3>Datum &amp; Uhrzeit</h3>
+      <div class="cal-head" id="calMonth"></div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div id="slotWrap" style="display:none">
+        <p style="font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px">Verfügbare Zeiten — <span id="selDateLabel"></span></p>
+        <div class="slots" id="slotGrid"></div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-line-dark" onclick="goStep(1)">← Zurück</button>
+        <button class="btn btn-dark" id="next2" disabled onclick="goStep(3)">Weiter →</button>
+      </div>
+    </div>
+
+    <div id="step3" style="display:none">
+      <div class="m-eyebrow">Schritt 3 / 3</div>
+      <h3>Ihre Kontaktdaten</h3>
+      <div class="summary-box" id="summary2"></div>
+      <div class="form-grid">
+        <div class="field"><label>Vorname *</label><input id="fname" placeholder="Vorname"></div>
+        <div class="field"><label>Nachname *</label><input id="lname" placeholder="Nachname"></div>
+        <div class="field"><label>E-Mail *</label><input id="email" type="email" placeholder="ihre@email.ch"></div>
+        <div class="field"><label>Telefon</label><input id="phone" placeholder="079 …"></div>
+        <div class="field full"><label>Bemerkung (optional)</label><textarea id="msg" rows="2" placeholder="z.B. Verwendungszweck, Styling-Wunsch, Hintergrund …"></textarea></div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-line-dark" onclick="goStep(2)">← Zurück</button>
+        <button class="btn btn-dark" onclick="confirmBooking()">Termin anfragen ✓</button>
+      </div>
+      <p class="micro-trust">Bestätigung per E-Mail · 100% Zufriedenheitsgarantie</p>
+    </div>
+
+    <div id="step4" style="display:none" class="center">
+      <div class="confirm-icon">✓</div>
+      <h3 style="margin-bottom:10px">Anfrage gesendet</h3>
+      <p style="color:var(--muted);font-size:15px;margin-bottom:26px">Vielen Dank! Sie erhalten in Kürze eine Bestätigung per E-Mail.<br><small>(Skizze — hier erfolgt später die echte Bestätigung &amp; der Kalendereintrag.)</small></p>
+      <div class="summary-box" id="summary3" style="text-align:left"></div>
+      <button class="btn btn-dark" onclick="closeBooking()">Fertig</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // header state
+  const hd=document.getElementById('hd');
+  addEventListener('scroll',()=>{hd.classList.toggle('solid',scrollY>40)});
+
+  // ----- Angebote (nur belegte Original-Inhalte; Preise mit Platzhalter wo nicht belegt) -----
+  const offers=[
+    {name:'Bewerbungsfotos', sub:'Studio · Beratung inklusive', price:'ab CHF 95'},
+    {name:'Portrait Basic', sub:'Charakterstudien im Studio', price:'CHF [Preis]'},
+    {name:'Portrait Premium', sub:'2–4 h · mehrere Sets', price:'CHF [Preis]'},
+    {name:'Portrait Deluxe', sub:'mit Stylistin & Typberatung', price:'CHF [Preis]'},
+    {name:'Business Paket 5 Personen', sub:'Kleine Teams & Praxen', price:'CHF 400'},
+    {name:'Business Paket 10 Personen', sub:'Mitarbeiterfotos KMU', price:'CHF 600'},
+    {name:'Business Paket 20 Personen', sub:'Grosse Teams', price:'CHF 1000'},
+    {name:'Kinder-Fotoshooting', sub:'Im Studio', price:'CHF 200'},
+    {name:'Iris-Fotografie (Augenkunst)', sub:'15–20 Min · Wil oder Zuzwil', price:'CHF [Preis]'}
+  ];
+  const state={offer:null,date:null,time:null};
+
+  function switchTab(id,btn){
+    document.getElementById('tab-portrait').style.display=id==='portrait'?'block':'none';
+    document.getElementById('tab-business').style.display=id==='business'?'block':'none';
+    document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function openBooking(preselect){
+    document.getElementById('bookingModal').classList.add('open');
+    document.body.style.overflow='hidden';
+    renderOffers(preselect);
+    goStep(1);
+  }
+  function closeBooking(){
+    document.getElementById('bookingModal').classList.remove('open');
+    document.body.style.overflow='';
+    state.offer=null;state.date=null;state.time=null;
+    ['fname','lname','email','phone','msg'].forEach(id=>document.getElementById(id).value='');
+    goStep(1);
+  }
+  document.getElementById('bookingModal').addEventListener('click',e=>{if(e.target.id==='bookingModal')closeBooking()});
+
+  function renderOffers(preselect){
+    const list=document.getElementById('offerList');
+    list.innerHTML='';
+    document.getElementById('next1').disabled=true;
+    offers.forEach(o=>{
+      const b=document.createElement('button');
+      b.className='pick'+(preselect===o.name?' sel':'');
+      b.innerHTML=`<span><b>${o.name}</b><small>${o.sub}</small></span><span class="p-price">${o.price}</span>`;
+      b.onclick=()=>{state.offer=o;document.querySelectorAll('.pick').forEach(p=>p.classList.remove('sel'));b.classList.add('sel');document.getElementById('next1').disabled=false;};
+      list.appendChild(b);
+      if(preselect===o.name){state.offer=o;document.getElementById('next1').disabled=false;}
+    });
+  }
+
+  function goStep(n){
+    [1,2,3,4].forEach(i=>document.getElementById('step'+i).style.display=i===n?'block':'none');
+    document.getElementById('p1').className=n>=1?'done':'';
+    document.getElementById('p2').className=n>=2?'done':'';
+    document.getElementById('p3').className=n>=3?'done':'';
+    if(n===2)renderCalendar();
+    if(n===3)renderSummary('summary2');
+  }
+
+  const months=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+  const dows=['Mo','Di','Mi','Do','Fr','Sa','So'];
+  function renderCalendar(){
+    const grid=document.getElementById('calGrid');
+    grid.innerHTML='';
+    dows.forEach(d=>{const e=document.createElement('div');e.className='dow';e.textContent=d;grid.appendChild(e);});
+    const today=new Date();
+    document.getElementById('calMonth').textContent=months[today.getMonth()]+' '+today.getFullYear();
+    const offset=(today.getDay()+6)%7;
+    for(let i=0;i<offset;i++)grid.appendChild(document.createElement('div'));
+    for(let i=0;i<28;i++){
+      const d=new Date(today);d.setDate(today.getDate()+i);
+      const btn=document.createElement('button');
+      btn.className='day';btn.textContent=d.getDate();
+      const isSun=d.getDay()===0, mockBusy=(d.getDate()%9===0);
+      if(isSun||mockBusy){btn.disabled=true;}
+      else{
+        btn.onclick=()=>{
+          state.date=new Date(d);state.time=null;
+          document.querySelectorAll('.day').forEach(x=>x.classList.remove('sel'));
+          btn.classList.add('sel');
+          renderSlots(d);
+          document.getElementById('next2').disabled=true;
+        };
+      }
+      grid.appendChild(btn);
+    }
+    document.getElementById('slotWrap').style.display='none';
+    document.getElementById('next2').disabled=true;
+  }
+  function renderSlots(d){
+    document.getElementById('slotWrap').style.display='block';
+    document.getElementById('selDateLabel').textContent=d.getDate()+'. '+months[d.getMonth()];
+    const grid=document.getElementById('slotGrid');
+    grid.innerHTML='';
+    ['09:00','10:00','11:00','13:00','14:00','15:00','16:00','17:00'].forEach((t,i)=>{
+      const b=document.createElement('button');
+      b.className='slot';b.textContent=t;
+      if((d.getDate()+i)%5===0){b.disabled=true;b.style.opacity=.25;}
+      else b.onclick=()=>{state.time=t;document.querySelectorAll('.slot').forEach(s=>s.classList.remove('sel'));b.classList.add('sel');document.getElementById('next2').disabled=false;};
+      grid.appendChild(b);
+    });
+  }
+
+  function renderSummary(id){
+    const el=document.getElementById(id);
+    const d=state.date;
+    el.innerHTML=`
+      <div><span>Angebot</span><b>${state.offer?state.offer.name:'–'}</b></div>
+      <div><span>Preis</span><b>${state.offer?state.offer.price:'–'}</b></div>
+      <div><span>Termin</span><b>${d?d.getDate()+'. '+months[d.getMonth()]+' '+d.getFullYear()+', '+state.time+' Uhr':'–'}</b></div>
+      <div><span>Ort</span><b>Gallusstrasse 14, 9500 Wil SG</b></div>`;
+  }
+
+  function confirmBooking(){
+    const f=document.getElementById('fname').value.trim();
+    const l=document.getElementById('lname').value.trim();
+    const e=document.getElementById('email').value.trim();
+    if(!f||!l||!e){alert('Bitte Vorname, Nachname und E-Mail ausfüllen.');return;}
+    renderSummary('summary3');
+    document.getElementById('summary3').innerHTML+=`<div><span>Name</span><b>${f} ${l}</b></div><div><span>E-Mail</span><b>${e}</b></div>`;
+    goStep(4);
+  }
+</script>
+</body>
+</html>
